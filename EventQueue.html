@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //Console log: finsihed function, finished execution, click event!, sest JS vaatab event queue'd alles siis, kui stack on tühi
+    function waitThreeSeconds() {
+        var ms = 3000 + new Date().getTime();
+        while (new Date() < ms) {}
+        console.log('finished function');
+    }
+
+    function clickHandler() {
+        console.log('click event!');
+    }
+
+    document.addEventListener('click', clickHandler);
+
+    waitThreeSeconds();
+    console.log('finished execution');
+</script>
+
+</body>
+</html>
